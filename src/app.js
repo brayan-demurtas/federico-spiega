@@ -26,10 +26,10 @@ async function fetchData() {
     // Estrai i dati JSON dalla risposta
     const data = await response.json();
 
-    // Aggiorna l'elemento HTML con l'insulto ricevuto
+  
    return data
   } catch (error) {
-    // Gestione degli errori nel caso la richiesta fallisca
+    // Gestione minima, perché non ho volgia degli errori nel caso la richiesta fallisca
     console.error('Si è verificato un errore:', error);
   }
 }

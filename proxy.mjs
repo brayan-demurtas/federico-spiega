@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 
 app.get('/proxy', async (req, res) => {
   try {
-    const response = await fetch('https://evilinsult.com/generate_insult.php?lang=en&type=json');
+    const response = await fetch('https://evilinsult.com/generate_insult.php?lang=it&type=json');
     const data = await response.json();
     res.json(data);
   } catch (error) {
