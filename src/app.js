@@ -50,9 +50,12 @@ async function renderInsult(){
   const data = await fetchData()
 const insult = data.insult.toLowerCase()
  let userName = userNameInput.value
-  
+ if(!checkInput(userName)){
+   createItemList(insult, userName)
 
- createItemList(insult, userName)
+ }return
+ 
+
 
  
 }
@@ -61,3 +64,18 @@ function deleteAllInsult(){
   insultResultElement.innerHTML= ''
 }
  
+function checkInput(userName) {
+  const regex = /^[0-9]+$/;
+  const control = regex.test(userName);
+  if (control) {
+    alert('Ti prego non farmi incazzare e metti un nome valido');
+    return true; 
+  }else if(userName == ''){
+    alert('così impari')
+    alert('stronzo')
+    userNameInput.value = 'Tua mamma'
+   
+    return true
+  }
+  return false; 
+}
